@@ -234,18 +234,18 @@ describe('Autonomous AI Trading Agent - Automated Verification Tests (18 Require
     const market = simulator.getMarketState();
     market.currentPrice = 101.0;
 
-    // Simulate session end (time = 60s, isSessionEnd = true)
-    const decisionRes = decisionEngine.evaluateMarket(market, ledger.getState(), 60, true);
+    // Simulate session end (time = 120s, isSessionEnd = true)
+    const decisionRes = decisionEngine.evaluateMarket(market, ledger.getState(), 120, true, 120);
     expect(decisionRes.decision.ruleId).toBe('RULE_5_EXIT_SAFE');
     expect(decisionRes.decision.decision).toBe('SELL');
     expect(decisionRes.decision.proposedOrderQuantity).toBe(15);
 
     // Process the decision
-    executionEngine.processDecision(decisionRes, 60);
+    executionEngine.processDecision(decisionRes, 120);
     expect(ledger.getState().holdingsQuantity).toBe(0);
 
     // Check that evaluating again does not execute duplicate sell
-    const decisionRes2 = decisionEngine.evaluateMarket(market, ledger.getState(), 60, true);
+    const decisionRes2 = decisionEngine.evaluateMarket(market, ledger.getState(), 120, true, 120);
     expect(decisionRes2.decision.decision).toBe('HOLD');
   });
 
@@ -297,7 +297,7 @@ describe('Autonomous AI Trading Agent - Automated Verification Tests (18 Require
     expect(snap.portfolio.holdingsQuantity).toBe(0);
     expect(snap.portfolio.transactions.length).toBe(0);
     expect(snap.elapsedSeconds).toBe(0);
-    expect(snap.timeRemaining).toBe(60);
+    expect(snap.timeRemaining).toBe(120);
     expect(snap.runState).toBe('IDLE');
     session.destroy();
   });

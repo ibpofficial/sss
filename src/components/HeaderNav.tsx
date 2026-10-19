@@ -9,9 +9,7 @@ import {
   ShieldCheck, 
   Clock, 
   HelpCircle,
-  FileText,
-  Activity,
-  SlidersHorizontal
+  FileText
 } from 'lucide-react';
 import type { SimulationRunState } from '../engine/sessionController';
 import type { AgentStatus } from '../types/orders';

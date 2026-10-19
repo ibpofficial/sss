@@ -7,7 +7,7 @@ export interface PricePoint {
   high: number;
   low: number;
   close: number;
-  volume: number;
+  volume?: number;
   change: number;
   changePercent: number;
   maShort: number; // 5-period

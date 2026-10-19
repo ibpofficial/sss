@@ -6,10 +6,7 @@ import {
   TrendingDown, 
   Activity, 
   CandlestickChart, 
-  LineChart as LineChartIcon,
-  Layers,
-  Sliders,
-  Crosshair
+  LineChart as LineChartIcon
 } from 'lucide-react';
 import { formatRupees, formatPercent, formatSeconds } from '../utils/formatting';
 

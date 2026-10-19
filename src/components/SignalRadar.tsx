@@ -1,19 +1,14 @@
-import React from 'react';
 import { 
   Radar, 
   TrendingDown, 
   TrendingUp, 
   Target, 
-  ShieldAlert, 
-  Clock, 
-  CheckCircle2, 
-  AlertCircle,
-  ArrowRight
+  ShieldAlert
 } from 'lucide-react';
 import type { MarketState } from '../types/market';
 import type { PortfolioState } from '../types/portfolio';
 import type { StrategyRuleConfig } from '../types/strategy';
-import { formatRupees, formatPercent } from '../utils/formatting';
+import { formatPercent } from '../utils/formatting';
 
 interface SignalRadarProps {
   market: MarketState;
