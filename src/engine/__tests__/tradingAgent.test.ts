@@ -83,6 +83,7 @@ describe('Autonomous AI Trading Agent - Automated Verification Tests (18 Require
         high: 103,
         low: 100,
         close: 102,
+        volume: 100,
         change: 1,
         changePercent: 0.98,
         maShort: 101.5,
